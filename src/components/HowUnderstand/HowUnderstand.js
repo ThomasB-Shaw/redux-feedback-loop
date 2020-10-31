@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 class HowUnderstand extends Component {
@@ -22,7 +23,11 @@ class HowUnderstand extends Component {
           <h1>How well are you understanding the content?</h1>
           <label forHtml='input'>Understanding?</label>
           <input id ='input' type='number' min='1' max='5' onChange={(event) => this.handleChange(event)}/>
-          <button onClick={this.nextClick}><Link to="/understand">Next</Link></button>
+          { this.state.understandRating === 0 ?
+          <p>Please Ensure the info field is filled in, Thank you!</p>
+          :
+          <button onClick={this.nextClick}><Link to="/support">Next</Link></button>
+              }
         <br/>
       </div>
     );

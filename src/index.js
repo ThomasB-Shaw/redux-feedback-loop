@@ -22,7 +22,17 @@ const howUnderstandReducer = (state = [], action) => {
 
   switch(action.type) {
     case 'HOW_UNDERSTAND':
-      return [...state, action.payload];
+      return [action.payload];
+    default:
+      return state;
+  }
+}
+
+const howSupportReducer = (state = [], action) => {
+
+  switch(action.type) {
+    case 'HOW_SUPPORT':
+      return [action.payload];
     default:
       return state;
   }
@@ -31,7 +41,8 @@ const howUnderstandReducer = (state = [], action) => {
 const storeInstance = createStore(
     combineReducers({
       howFeelReducer,
-      howUnderstandReducer
+      howUnderstandReducer,
+      howSupportReducer
     }),
     applyMiddleware(logger)
   );

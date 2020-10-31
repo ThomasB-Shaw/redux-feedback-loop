@@ -2,33 +2,34 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
-class HowFeeling extends Component {
+class HowSupport extends Component {
 
     state = {
-        feelingRating: 0
+        supportRating: 0
       }
       
     handleChange = (event) => {
         this.setState({
-            feelingRating: event.target.value
+            supportRating: event.target.value
         });
-        console.log(this.state.feelingRating);
+        console.log(this.state.supportRating);
     }
 
     nextClick = () => {
-      this.props.dispatch({type:'HOW_FEEL', payload: this.state.feelingRating})
+      this.props.dispatch({type:'HOW_SUPPORT', payload: this.state.supportRating})
     }
+
   render() {
     return (
-      <div className="howFeeling">
-          <h1>How Are you feeling today?</h1>
-          <label forHtml='input'>Feeling?</label>
+      <div className="howSupport">
+          <h1>How well are you being supported?</h1>
+          <label forHtml='input'>support?</label>
           <input id ='input' type='number' min='1' max='5' onChange={(event) => this.handleChange(event)} />
-          { this.state.feelingRating === 0 ?
+          { this.state.supportRating === 0 ?
           <p>Please Ensure the info field is filled in, Thank you!</p>
           :
           <button onClick={this.nextClick}><Link to="/understand">Next</Link></button>
-              }
+            }
         <br/>
       </div>
     );
@@ -38,4 +39,4 @@ class HowFeeling extends Component {
 const putReduxStateOnProps = (reduxState) => ({
   reduxState: reduxState
 });
-export default connect(putReduxStateOnProps)(HowFeeling);
+export default connect(putReduxStateOnProps)(Howsupport);

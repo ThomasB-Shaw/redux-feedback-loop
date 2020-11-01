@@ -1,19 +1,38 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import Axios from 'axios';
 
 class Review extends Component {
+
+    state= {
+        feedback: {
+            HowFeeling: this.props.reduxState.howFeelReducer,
+            HowUnderstand: this.props.reduxState.howUnderstandReducer,
+            HowSupport: this.props.reduxState.howSupportReducer,
+            HowComment: this.props.reduxState.howCommentReducer
+        }
+    }
+
+    handleSubmit = (event) => {
+        console.log(`Adding feedback`, this.state.feedback);
+        Axios.post('/feedback', this.state.feedback).then((response) => {
+          console.log(response.data);
+        }).catch((err) => {
+          console.log(err);
+        })
+      }
+
   render() {
     return (
       <div className="Review">
           <h1>Review Your Feedback</h1>
           <ul>
-              <li>Feelings: {this.props.reduxState.howFeelReducer}</li>
-              <li>Understanding: {this.props.reduxState.howUnderstandReducer}</li>
-              <li>Support: {this.props.reduxState.howSupportReducer}</li>
-              <li>Comments: {this.props.reduxState.howCommentReducer}</li>
+              <li>Feelings: {this.state.feedback.HowFeeling}</li>
+              <li>Understanding: {this.state.feedback.HowUnderstand}</li>
+              <li>Support: {this.state.feedback.HowSupport}</li>
+              <li>Comments: {this.state.feedback.HowComment}</li>
           </ul>
-          <button>Submit</button>
+          <button onClick={this.handleSubmit}>Submit</button>
         <br/>
       </div>
     );

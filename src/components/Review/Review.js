@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Axios from 'axios';
 
 class Review extends Component {
@@ -22,6 +23,10 @@ class Review extends Component {
         })
       }
 
+      goBackClick = () => {
+        this.props.history.push('/comments');
+      }
+
   render() {
     return (
       <div className="Review">
@@ -34,6 +39,7 @@ class Review extends Component {
           </ul>
           <button onClick={this.handleSubmit}><Link to="/Success">Submit</Link></button>
         <br/>
+        <button className='goBack' onClick={this.goBackClick}>Go Back</button>
       </div>
     );
   }

@@ -25,14 +25,15 @@ class Admin extends Component {
    }
 
    deleteClick =() => {
-    Axios.get('/feedback/id').then((response) => {
-     console.log(response.data);
-     this.setState({
-         feedback: response.data
-     })
+       let feedbackID= this.target.value
+    Axios.delete(`/feedback/${feedbackID}`).then((response) => {
+     console.log('In Delete', response);
+     this.getFeedback();
    }).catch((error) => {
-     console.log('error', error);
+     console.log('error in delete', error);
    });
+}
+
 
   render() {
     return (
@@ -55,7 +56,7 @@ class Admin extends Component {
                             <td>{info.understanding}</td>
                             <td>{info.support}</td>
                             <td>{info.comments}</td> 
-                            <td><button onClick={this.deleteClick}>DELETE</button></td> 
+                            <td><button value={info.id} onClick={this.deleteClick}>DELETE</button></td> 
                             </tr>
                     })}
               </tbody>

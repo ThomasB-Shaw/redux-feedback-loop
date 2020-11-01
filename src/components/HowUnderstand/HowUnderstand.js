@@ -17,6 +17,11 @@ class HowUnderstand extends Component {
     nextClick = () => {
       this.props.dispatch({type:'HOW_UNDERSTAND', payload: this.state.understandRating})
     }
+
+    goBackClick = () => {
+      this.props.history.push('/');
+    }
+
   render() {
     return (
       <div className="howFeeling">
@@ -29,6 +34,7 @@ class HowUnderstand extends Component {
           <button onClick={this.nextClick}><Link to="/support">Next</Link></button>
               }
         <br/>
+        <button className='goBack' onClick={this.goBackClick}>Go Back</button>
       </div>
     );
   }

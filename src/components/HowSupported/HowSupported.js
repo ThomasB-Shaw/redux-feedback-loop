@@ -19,6 +19,10 @@ class HowSupport extends Component {
       this.props.dispatch({type:'HOW_SUPPORT', payload: this.state.supportRating})
     }
 
+    goBackClick = () => {
+      this.props.history.push('/understand');
+    }
+
   render() {
     return (
       <div className="howSupport">
@@ -31,6 +35,7 @@ class HowSupport extends Component {
           <button onClick={this.nextClick}><Link to="/comments">Next</Link></button>
             }
         <br/>
+        <button className='goBack' onClick={this.goBackClick}>Go Back</button>
       </div>
     );
   }

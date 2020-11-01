@@ -12,7 +12,7 @@ const howFeelReducer = (state = [], action) => {
 
   switch(action.type) {
     case 'HOW_FEEL':
-      return [...state, action.payload];
+      return [action.payload];
     default:
       return state;
   }
@@ -38,11 +38,22 @@ const howSupportReducer = (state = [], action) => {
   }
 }
 
+const howCommentReducer = (state = [], action) => {
+
+  switch(action.type) {
+    case 'HOW_COMMENT':
+      return [action.payload];
+    default:
+      return state;
+  }
+}
+
 const storeInstance = createStore(
     combineReducers({
       howFeelReducer,
       howUnderstandReducer,
-      howSupportReducer
+      howSupportReducer,
+      howCommentReducer
     }),
     applyMiddleware(logger)
   );

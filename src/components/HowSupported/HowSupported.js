@@ -28,7 +28,7 @@ class HowSupport extends Component {
           { this.state.supportRating === 0 ?
           <p>Please Ensure the info field is filled in, Thank you!</p>
           :
-          <button onClick={this.nextClick}><Link to="/understand">Next</Link></button>
+          <button onClick={this.nextClick}><Link to="/comments">Next</Link></button>
             }
         <br/>
       </div>
@@ -39,4 +39,4 @@ class HowSupport extends Component {
 const putReduxStateOnProps = (reduxState) => ({
   reduxState: reduxState
 });
-export default connect(putReduxStateOnProps)(Howsupport);
+export default connect(putReduxStateOnProps)(HowSupport);

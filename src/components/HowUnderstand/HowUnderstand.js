@@ -15,7 +15,7 @@ class HowUnderstand extends Component {
         console.log(this.state.feelingRating);
     }
     nextClick = () => {
-      this.props.dispatch({type:'HOW_UNDERSTAND', payload: this.state.feelingRating})
+      this.props.dispatch({type:'HOW_UNDERSTAND', payload: this.state.understandRating})
     }
   render() {
     return (

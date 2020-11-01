@@ -5,16 +5,16 @@ const pool = require('../modules/pool');
 
 router.post('/',  (req, res) => {
     let feedback = req.body;
-    console.log(`Adding book`, feedback);
-  
+    console.log(`Adding Feedback`, feedback);
     let queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
-                    VALUES ($1, $2, $3, $4)`;
+                    VALUES ($1, $2, $3, $4);`;
     pool.query(queryText, [feedback.HowFeeling, feedback.HowUnderstand, feedback.HowSupport, feedback.HowComment])
-      .then(result => {
+      .then((result) => {
         res.sendStatus(201);
+        console.log(result);
       })
-      .catch(error => {
-        console.log(`Error adding new book`, error);
+      .catch((error) => {
+        console.log(`Error adding feedback`, error);
         res.sendStatus(500);
       });
   });
@@ -25,7 +25,7 @@ router.post('/',  (req, res) => {
       res.send(result.rows);
     })
     .catch(error => {
-      console.log('error getting books', error);
+      console.log('error getting feedback', error);
       res.sendStatus(500);
     });
   });

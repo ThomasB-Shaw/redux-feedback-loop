@@ -1,0 +1,17 @@
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border: 2.5px solid whitesmoke;
+}
+
+th {
+    border: 2.5px solid whitesmoke;
+    border-collapse: collapse;
+}
+
+tbody {
+    border-collapse: collapse;
+    border: 2.5px solid whitesmoke;
+}
+
+tr:nth-child(even) {background-color: #595959;}

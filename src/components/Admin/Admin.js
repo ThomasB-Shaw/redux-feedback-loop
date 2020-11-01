@@ -14,7 +14,6 @@ class Admin extends Component {
    }
 
    getFeedback =() => {
-       console.log('gettin da feedback');
        Axios.get('/feedback').then((response) => {
         console.log(response.data);
         this.setState({
@@ -25,9 +24,15 @@ class Admin extends Component {
       });
    }
 
-   deleteClick = () => {
-       console.log('click Delete');
-   }
+   deleteClick =() => {
+    Axios.get('/feedback/id').then((response) => {
+     console.log(response.data);
+     this.setState({
+         feedback: response.data
+     })
+   }).catch((error) => {
+     console.log('error', error);
+   });
 
   render() {
     return (

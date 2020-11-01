@@ -6,9 +6,9 @@ class Review extends Component {
 
     state= {
         feedback: {
-            HowFeeling: this.props.reduxState.howFeelReducer,
-            HowUnderstand: this.props.reduxState.howUnderstandReducer,
-            HowSupport: this.props.reduxState.howSupportReducer,
+            HowFeeling: Number(this.props.reduxState.howFeelReducer),
+            HowUnderstand: Number(this.props.reduxState.howUnderstandReducer),
+            HowSupport: Number(this.props.reduxState.howSupportReducer),
             HowComment: this.props.reduxState.howCommentReducer
         }
     }
@@ -20,7 +20,6 @@ class Review extends Component {
         }).catch((err) => {
           console.log(err);
         })
-        // this.props.history.push('/');
       }
 
   render() {
@@ -33,7 +32,7 @@ class Review extends Component {
               <li>Support: {this.state.feedback.HowSupport}</li>
               <li>Comments: {this.state.feedback.HowComment}</li>
           </ul>
-          <button onClick={this.handleSubmit}>Submit</button>
+          <button onClick={this.handleSubmit}><Link to="/Success">Submit</Link></button>
         <br/>
       </div>
     );

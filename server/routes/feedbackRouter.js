@@ -32,6 +32,7 @@ router.post('/',  (req, res) => {
     });
   });
 
+
   // DELETE FEEDBACK IN ADMIN
 router.delete('/:id', (req, res) => {
     pool.query('DELETE FROM "feedback" WHERE id=$1', [req.params.id]).then((result) => {

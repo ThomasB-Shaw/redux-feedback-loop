@@ -21,3 +21,77 @@ body {
   background-color: #121212;
   color: whitesmoke;
 }
+
+.Success{
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  padding: 5px 10px 10px 5px;
+  border-radius: 15px;
+  background-color: #404040;
+}
+
+.Admin{
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  padding: 5px 10px 10px 5px;
+  border-radius: 15px;
+  background-color: #404040;
+}
+
+.howFeeling{
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  padding: 5px 10px 10px 5px;
+  border-radius: 15px;
+  background-color: #404040;
+}
+
+.howUnderstand{
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  padding: 5px 10px 10px 5px;
+  border-radius: 15px;
+  background-color: #404040;
+}
+
+.howSupport{
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  padding: 5px 10px 10px 5px;
+  border-radius: 15px;
+  background-color: #404040;
+}
+
+.howComment{
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  padding: 5px 10px 10px 5px;
+  border-radius: 15px;
+  background-color: #404040;
+}
+
+.Review{
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  padding: 5px 10px 10px 5px;
+  border-radius: 15px;
+  background-color: #404040;
+}
+
+ul {
+  list-style: none;
+}

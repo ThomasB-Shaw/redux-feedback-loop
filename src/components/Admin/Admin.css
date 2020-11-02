@@ -12,6 +12,7 @@ th {
 tbody {
     border-collapse: collapse;
     border: 2.5px solid whitesmoke;
+    background-color: #121212;
 }
 
 tr:nth-child(even) {background-color: #595959;}

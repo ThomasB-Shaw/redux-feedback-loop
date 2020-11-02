@@ -11,7 +11,7 @@ class Success extends Component {
 
   render() {
     return (
-      <div className="Review">
+      <div className="Success">
           <h1>Thank You for Your Feedback!!!</h1>
           <button onClick={this.handleReturn}>Return</button>
         <br/>

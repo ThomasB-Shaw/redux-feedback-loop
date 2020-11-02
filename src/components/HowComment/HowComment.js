@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as  Route, Link } from 'react-router-dom';
 
 class HowComment extends Component {
 
     state = {
         comment: ''
       }
-      
+    // Handles changes within the input on the DOM
     handleChange = (event) => {
         this.setState({
             comment: event.target.value
         });
-        console.log(this.state.comment);
     }
-
+    // Upon Click will send info to the HowCommentReducer in index.js to be stored
     nextClick = () => {
       this.props.dispatch({type:'HOW_COMMENT', payload: this.state.comment})
     }
-
+    // On Click Returns user back to previous page
     goBackClick = () => {
       this.props.history.push('/support');
     }

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+// Header displayed on all pages
+
 class Header extends Component {
   render() {
     return (

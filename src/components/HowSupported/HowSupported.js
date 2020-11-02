@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Route, Link } from 'react-router-dom';
 
 class HowSupport extends Component {
 
     state = {
         supportRating: 0
       }
-      
+      // Function controls changes within the input on the dom
     handleChange = (event) => {
         this.setState({
             supportRating: event.target.value
         });
-        console.log(this.state.supportRating);
     }
-
+    // Upon click will send info to the HowSupportReducer in index.js to be stored
     nextClick = () => {
       this.props.dispatch({type:'HOW_SUPPORT', payload: this.state.supportRating})
     }
-
+    // Upon click will navigate user one screen back
     goBackClick = () => {
       this.props.history.push('/understand');
     }

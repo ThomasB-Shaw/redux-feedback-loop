@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Route, Link } from 'react-router-dom';
 
 class HowFeeling extends Component {
 
     state = {
         feelingRating: 0
       }
-      
+    // Function controls changes within the input on the dom
     handleChange = (event) => {
         this.setState({
             feelingRating: event.target.value
         });
-        console.log(this.state.feelingRating);
     }
-
+    // Upon Click will send info to the HowFeelingReducer in index.js to be stored
     nextClick = () => {
       this.props.dispatch({type:'HOW_FEEL', payload: this.state.feelingRating})
     }
+
   render() {
     return (
       <div className="howFeeling">

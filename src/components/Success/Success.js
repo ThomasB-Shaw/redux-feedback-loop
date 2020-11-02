@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+
+// Page presented upon successful submission of info to the feedback DataBase
 
 class Success extends Component {
 
-
-    handleSubmit = () => {
+    // Upon click will return the user to the beginning of the process
+    handleReturn = () => {
         this.props.history.push('/');
       }
 
@@ -12,7 +13,7 @@ class Success extends Component {
     return (
       <div className="Review">
           <h1>Thank You for Your Feedback!!!</h1>
-          <button onClick={this.handleSubmit}>Return</button>
+          <button onClick={this.handleReturn}>Return</button>
         <br/>
       </div>
     );

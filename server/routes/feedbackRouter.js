@@ -3,7 +3,7 @@ const router = express.Router();
 
 const pool = require('../modules/pool');
 
-// ERROR IN POST
+// POST ROUTE, Current Bug Posts comments in '{}' in table
 router.post('/',  (req, res) => {
     let feedback = req.body;
     console.log(`Adding Feedback`, feedback);
@@ -13,7 +13,6 @@ router.post('/',  (req, res) => {
       .then((result) => {
         res.sendStatus(201);
         console.log(result);
-
       })
       .catch((error) => {
         console.log(`Error adding feedback`, error);
@@ -21,6 +20,7 @@ router.post('/',  (req, res) => {
       });
   });
 
+  // GET Route to obtain all info from the database, used in Admin Component
   router.get('/', (req, res) => {
     let queryText = 'SELECT * FROM "feedback";';
     pool.query(queryText).then(result => {
@@ -33,7 +33,7 @@ router.post('/',  (req, res) => {
   });
 
 
-  // DELETE FEEDBACK IN ADMIN
+  // DELETE FEEDBACK IN ADMIN Route Connected to Info Component
 router.delete('/:id', (req, res) => {
     pool.query('DELETE FROM "feedback" WHERE id=$1', [req.params.id]).then((result) => {
         res.sendStatus(200);

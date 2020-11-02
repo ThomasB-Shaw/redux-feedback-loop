@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Route, Link } from 'react-router-dom';
 import Axios from 'axios';
 
 class Review extends Component {
-
+    // State uses all reducers in index.js to bundle previous inputs and display them on the DOM
     state= {
         feedback: {
             HowFeeling: Number(this.props.reduxState.howFeelReducer),
@@ -13,7 +13,7 @@ class Review extends Component {
             HowComment: this.props.reduxState.howCommentReducer
         }
     }
-
+    // Upon click of submit will request post from router to update the feedback database
     handleSubmit = (event) => {
         console.log(`Adding feedback`, this.state.feedback);
         Axios.post('/feedback', this.state.feedback).then((response) => {
@@ -22,7 +22,7 @@ class Review extends Component {
           console.log(err);
         })
       }
-
+      // Upon click will navigate user one screen back
       goBackClick = () => {
         this.props.history.push('/comments');
       }

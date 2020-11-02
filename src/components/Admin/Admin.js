@@ -9,11 +9,11 @@ class Admin extends Component {
     state= {
         feedback: []
         }
-
+    // On Mount of DOM will fire off GET Request to display all info in a table format
    componentDidMount = () => {
        this.getFeedback();
    }
-
+   // Get Request to place all database info into the feedback state to be used and displayed
    getFeedback =() => {
        Axios.get('/feedback').then((response) => {
         console.log(response.data);
@@ -24,17 +24,6 @@ class Admin extends Component {
         console.log('error', error);
       });
    }
-
-   deleteClick =() => {
-       let feedbackID= this.target.value
-    Axios.delete(`/feedback/${feedbackID}`).then((response) => {
-     console.log('In Delete', response);
-     this.getFeedback();
-   }).catch((error) => {
-     console.log('error in delete', error);
-   });
-}
-
 
   render() {
     return (

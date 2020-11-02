@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Route, Link } from 'react-router-dom';
 
 class HowUnderstand extends Component {
 
     state = {
         understandRating: 0
       }
-
+    // Handles changes with the input field on the DOM
     handleChange = (event) => {
         this.setState({
             understandRating: event.target.value
         });
-        console.log(this.state.feelingRating);
     }
+    // Upon Click will send info to the HowUnderstandReducer in index.js to be stored
     nextClick = () => {
       this.props.dispatch({type:'HOW_UNDERSTAND', payload: this.state.understandRating})
     }
-
+    // On Click will navigate user back to the previous page in the process
     goBackClick = () => {
       this.props.history.push('/');
     }

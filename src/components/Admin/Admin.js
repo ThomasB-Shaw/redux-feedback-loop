@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Admin.css'
 import Axios from 'axios';
+import Info from '../Info/Info.js'
 
 class Admin extends Component {
 
@@ -51,13 +52,7 @@ class Admin extends Component {
               </thead>
               <tbody>
                   {this.state.feedback.map((info) => {
-                        return <tr key={info.id}>
-                            <td>{info.feeling}</td>
-                            <td>{info.understanding}</td>
-                            <td>{info.support}</td>
-                            <td>{info.comments}</td> 
-                            <td><button value={info.id} onClick={this.deleteClick}>DELETE</button></td> 
-                            </tr>
+                        return <Info getFeedback={this.getFeedback} info ={info} />
                     })}
               </tbody>
           </table>
